@@ -167,7 +167,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 167042272}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.85, z: 0}
+  m_LocalPosition: {x: 0, y: 2.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1848995063}
@@ -191,7 +191,7 @@ MonoBehaviour:
   controller: {fileID: 167042273}
   speed: 12
   gravity: -19.6
-  jumpHeight: 3
+  jumpHeight: 1
   groundCheck: {fileID: 2146386274}
   groundDistance: 0.4
   groundMask:
@@ -368,7 +368,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.3000001, z: -0.00000033693078}
+  m_LocalPosition: {x: 0, y: 1.42, z: -0.00000033693078}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 167042274}
@@ -494,7 +494,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2146386273}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.44, z: 0}
+  m_LocalPosition: {x: 0, y: -1.93, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 167042274}
@@ -507,6 +507,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1878049813314185071, guid: f89bdb63a158d4ab598a96afdee620d6, type: 3}
+      propertyPath: m_Size.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1878049813314185071, guid: f89bdb63a158d4ab598a96afdee620d6, type: 3}
+      propertyPath: m_Size.z
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1878049813314185071, guid: f89bdb63a158d4ab598a96afdee620d6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7323197135397569604, guid: f89bdb63a158d4ab598a96afdee620d6, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -554,6 +566,10 @@ PrefabInstance:
     - target: {fileID: 8100190046718022394, guid: f89bdb63a158d4ab598a96afdee620d6, type: 3}
       propertyPath: m_Name
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100190046718022394, guid: f89bdb63a158d4ab598a96afdee620d6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f89bdb63a158d4ab598a96afdee620d6, type: 3}
