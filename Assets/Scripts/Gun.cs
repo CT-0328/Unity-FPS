@@ -7,6 +7,7 @@ public class Gun : MonoBehaviour
 
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
+    public GameObject impactEffect;
 
     // Update is called once per frame
     void Update() {
@@ -24,6 +25,7 @@ public class Gun : MonoBehaviour
         if (enemy != null) {
           enemy.takeDamage(damage);
         }
+        Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
       }
     }
 }
