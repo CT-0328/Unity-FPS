@@ -8,10 +8,13 @@ public class Gun : MonoBehaviour
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
+    public float fireRate = 15f;
+    private float nextTimeToFire = 0f;
 
     // Update is called once per frame
     void Update() {
-        if (Input.GetButtonDown("Fire1")) {
+        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire) {
+          nextTimeToFire = Time.time + 1f/fireRate;
           Shoot();
         }
     }
@@ -25,7 +28,8 @@ public class Gun : MonoBehaviour
         if (enemy != null) {
           enemy.takeDamage(damage);
         }
-        Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+        GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+        Destroy(impactGO, 2f);
       }
     }
 }
