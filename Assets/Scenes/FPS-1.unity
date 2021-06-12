@@ -128,6 +128,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5344239470756863137, guid: 8a6925fe0d7a346aaa6a44db36e63340, type: 3}
   m_PrefabInstance: {fileID: 5344239470887649345}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &167042276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167042272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ae7e30b6bd0f4f2085e1919f131ed70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: 100
 --- !u!1 &608562856
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,6 +255,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  player: {fileID: 167042272}
+  enemy: {fileID: 608562856}
+  enemyMuzzleFlash: {fileID: 1531363377}
+  damage: 10
+  range: 15
 --- !u!54 &608562862
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -271,8 +289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 167042272}
-  enemyMuzzleFlash: {fileID: 1531363377}
-  interval: 0.5
+  interval: 0.3
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,7 +471,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400022, guid: a38f0fefbda80564b890ac759138031b, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400022, guid: a38f0fefbda80564b890ac759138031b, type: 3}
       propertyPath: m_LocalScale.x

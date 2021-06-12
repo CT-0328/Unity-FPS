@@ -24,9 +24,10 @@ public class Enemy : MonoBehaviour {
       enemyMuzzleFlash.Play();
       RaycastHit hit;
       if (Physics.Raycast(enemy.transform.position, enemy.transform.forward, out hit, range)) {
-        Player player = hit.transform.GetComponent<Player>();
+        PlayerHealth player = hit.transform.GetComponent<PlayerHealth>();
         if (player != null) {
-          player.damaged(damage);
+          player.takeDamage(damage);
+          //Debug.Log(playerHealth);
         }
       }
       Debug.Log("Enemy shot");
