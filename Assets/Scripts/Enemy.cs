@@ -27,9 +27,7 @@ public class Enemy : MonoBehaviour {
         PlayerHealth player = hit.transform.GetComponent<PlayerHealth>();
         if (player != null) {
           player.takeDamage(damage);
-          //Debug.Log(playerHealth);
         }
       }
-      Debug.Log("Enemy shot");
     }
 }
