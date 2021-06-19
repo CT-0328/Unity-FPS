@@ -142,6 +142,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: 100
   deathText: {fileID: 1235040634}
+  delay: 120
+  player: {fileID: 0}
 --- !u!1 &608562856
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,7 +292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 167042272}
-  interval: 0.4
+  interval: 0.6
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,10 +493,10 @@ RectTransform:
   m_Father: {fileID: 1984587891}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 25, y: -90}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 154}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1235040634
 MonoBehaviour:
@@ -518,18 +520,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 23
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 40
+    m_MaxSize: 300
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: You Died!
 --- !u!222 &1235040635
 CanvasRenderer:
   m_ObjectHideFlags: 0
