@@ -142,8 +142,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: 100
   deathText: {fileID: 1235040634}
-  delay: 120
-  player: {fileID: 0}
+  delay: 10
+  player: {fileID: 167042272}
+  regenInterval: 5
 --- !u!1 &608562856
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,7 +293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 167042272}
-  interval: 0.6
+  shootInterval: 0.7
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -531,7 +532,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You Died!
+  m_Text: 
 --- !u!222 &1235040635
 CanvasRenderer:
   m_ObjectHideFlags: 0

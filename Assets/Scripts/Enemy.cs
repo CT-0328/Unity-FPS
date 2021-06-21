@@ -8,24 +8,26 @@ public class Enemy : MonoBehaviour {
     public ParticleSystem enemyMuzzleFlash;
     public float damage = 10f;
     public float range = 15f;
+    private static float playerHealth;
 
-    public void damaged (float amount) {
+    public void damaged(float amount) {
       health -= amount;
       if (health <= 0f) {
         Die();
       }
     }
-
     void Die() {
       Destroy(gameObject);
     }
 
     public void EnemyShoot() {
-      enemyMuzzleFlash.Play();
+      if(PlayerHealth.playerHealth > 0) {
+        enemyMuzzleFlash.Play();
+      }
       RaycastHit hit;
-      if (Physics.Raycast(enemy.transform.position, enemy.transform.forward, out hit, range)) {
+      if(Physics.Raycast(enemy.transform.position, enemy.transform.forward, out hit, range)) {
         PlayerHealth player = hit.transform.GetComponent<PlayerHealth>();
-        if (player != null) {
+        if(player != null) {
           player.takeDamage(damage);
         }
       }

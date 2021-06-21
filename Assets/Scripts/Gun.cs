@@ -12,7 +12,7 @@ public class Gun : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire) {
+        if(Input.GetButton("Fire1") && Time.time >= nextTimeToFire) {
           nextTimeToFire = Time.time + 1f/fireRate;
           Shoot();
         }
@@ -21,9 +21,9 @@ public class Gun : MonoBehaviour
     void Shoot() {
       muzzleFlash.Play();
       RaycastHit hit;
-      if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range)) {
+      if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range)) {
         Enemy enemy = hit.transform.GetComponent<Enemy>();
-        if (enemy != null) {
+        if(enemy != null) {
           enemy.damaged(damage);
         }
       }
