@@ -140,9 +140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ae7e30b6bd0f4f2085e1919f131ed70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: 100
   deathText: {fileID: 1235040634}
-  delay: 10
+  delay: 2
   player: {fileID: 167042272}
   regenInterval: 5
 --- !u!1 &608562856
