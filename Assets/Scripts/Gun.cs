@@ -10,9 +10,8 @@ public class Gun : MonoBehaviour
     public float fireRate = 15f;
     private float nextTimeToFire = 0f;
 
-    // Update is called once per frame
     void Update() {
-        if(Input.GetButton("Fire1") && Time.time >= nextTimeToFire) {
+        if(Input.GetButton("Fire1") && Time.time >= nextTimeToFire && PlayerHealth.playerHealth > 0) {
           nextTimeToFire = Time.time + 1f/fireRate;
           Shoot();
         }

@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour {
 
@@ -9,6 +11,8 @@ public class Enemy : MonoBehaviour {
     public float damage = 10f;
     public float range = 15f;
     private static float playerHealth;
+    public Text winText;
+    public Text replayText;
 
     public void damaged(float amount) {
       health -= amount;
@@ -16,8 +20,16 @@ public class Enemy : MonoBehaviour {
         Die();
       }
     }
+
     void Die() {
       Destroy(gameObject);
+      winText.text = "You win!";
+      replayText.text = "Right click to play again!";
+      if(Input.GetMouseButtonDown(1)) {
+        Debug.Log("Pressed right click.");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        PlayerHealth.playerHealth = 100f;
+      }
     }
 
     public void EnemyShoot() {
