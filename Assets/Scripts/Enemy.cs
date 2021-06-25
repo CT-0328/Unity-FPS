@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour {
 
     void Die() {
       Destroy(gameObject);
-      winText.text = "You win!";
+      winText.text = "You Win!";
       replayText.text = "Right click to play again!";
     }
 
