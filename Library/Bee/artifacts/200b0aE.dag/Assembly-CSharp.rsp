@@ -425,6 +425,7 @@
 "Assets/Scripts/Enemy.cs"
 "Assets/Scripts/EnemyMovement.cs"
 "Assets/Scripts/Gun.cs"
+"Assets/Scripts/HealthBar.cs"
 "Assets/Scripts/mouseLook.cs"
 "Assets/Scripts/PlayerHealth.cs"
 "Assets/Scripts/playerMovement.cs"
