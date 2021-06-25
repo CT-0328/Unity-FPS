@@ -21,15 +21,17 @@ public class Enemy : MonoBehaviour {
       }
     }
 
+    void Update() {
+      if(Input.GetMouseButtonDown(1)) {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        PlayerHealth.playerHealth = 100f;
+      }
+    }
+
     void Die() {
       Destroy(gameObject);
       winText.text = "You win!";
       replayText.text = "Right click to play again!";
-      if(Input.GetMouseButtonDown(1)) {
-        Debug.Log("Pressed right click.");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        PlayerHealth.playerHealth = 100f;
-      }
     }
 
     public void EnemyShoot() {
