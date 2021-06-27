@@ -18,6 +18,7 @@ public class playerMovement : MonoBehaviour {
   bool isGrounded;
 
     void Update() {
+      if(PlayerHealth.playerHealth > 0) {
 
       isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
@@ -39,5 +40,6 @@ public class playerMovement : MonoBehaviour {
       velocity.y += gravity * Time.deltaTime;
 
       controller.Move(velocity);
+      }
     }
 }
