@@ -23,26 +23,25 @@ public class EnemyMovement : MonoBehaviour {
       }
 
       float distance = Vector3.Distance(player.transform.position, transform.position);
-
       spotDistance = Vector3.Distance(transform.position, patrolSpots[patrolSpotIndex].position);
 
       if(spotDistance < 0.01f) {
         increaseIndex();
       }
 
-      if(distance < 20) {
-        transform.position += transform.forward * speed * Time.deltaTime;
-        Quaternion targetRotation = Quaternion.LookRotation(player.transform.position - transform.position);
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 1 * Time.deltaTime);
-      }
-
-      if(distance <= 15 && timer > shootInterval) {
-        FindObjectOfType<Enemy>().EnemyShoot();
-        timer = 0;
-      }
-
     if(distance >= 20){
       patrol();
+    }
+
+    else if(distance < 20) {
+      transform.position += transform.forward * speed * Time.deltaTime;
+      Quaternion targetRotation = Quaternion.LookRotation(player.transform.position - transform.position);
+      transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 1 * Time.deltaTime);
+    }
+
+    else if(distance <= 15 && timer > shootInterval) {
+      FindObjectOfType<Enemy>().EnemyShoot();
+      timer = 0;
     }
   }
 
