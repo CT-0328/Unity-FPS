@@ -30,12 +30,8 @@ public class EnemyMovement : MonoBehaviour {
         increaseIndex();
       }
 
-      if(distance >= 20){
-        patrol();
-      }
-
       if(distance < 20) {
-        //transform.position += transform.forward * speed * Time.deltaTime;
+        transform.position += transform.forward * speed * Time.deltaTime;
         Quaternion targetRotation = Quaternion.LookRotation(player.transform.position - transform.position);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 1 * Time.deltaTime);
       }
@@ -44,7 +40,11 @@ public class EnemyMovement : MonoBehaviour {
         FindObjectOfType<Enemy>().EnemyShoot();
         timer = 0;
       }
+
+    if(distance >= 20){
+      patrol();
     }
+  }
 
     void patrol() {
       transform.Translate(Vector3.forward * speed * Time.deltaTime);
