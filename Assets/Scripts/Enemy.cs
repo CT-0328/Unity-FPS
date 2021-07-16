@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour {
 
-    public float health = 50f;
+    public float health = 100f;
     public GameObject player;
     public GameObject enemy;
     public ParticleSystem enemyMuzzleFlash;
@@ -22,7 +22,8 @@ public class Enemy : MonoBehaviour {
     }
 
     void Update() {
-      if(Input.GetMouseButtonDown(1)) {
+      if(Input.GetMouseButtonDown(1) && health <= 0) {
+        Debug.Log(health);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         PlayerHealth.playerHealth = 100f;
       }
@@ -38,6 +39,7 @@ public class Enemy : MonoBehaviour {
       if(PlayerHealth.playerHealth > 0) {
         enemyMuzzleFlash.Play();
       }
+
       RaycastHit hit;
       if(Physics.Raycast(enemy.transform.position, enemy.transform.forward, out hit, range)) {
         PlayerHealth player = hit.transform.GetComponent<PlayerHealth>();

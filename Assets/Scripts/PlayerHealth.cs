@@ -17,7 +17,7 @@ public class PlayerHealth : MonoBehaviour {
       if (timer < regenInterval) {
         timer += Time.deltaTime;
       }
-      if(Input.GetMouseButtonDown(1)) {
+      if(Input.GetMouseButtonDown(1) && playerHealth <= 0) {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         playerHealth = 100f;
       }
